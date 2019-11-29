@@ -4,6 +4,7 @@
 //  Includes remote send LoRa test message and system reset functions via MQTT subscription
 //  Hold Button A when starting to enter AP setup mode
 //  Browser connect to http://192.168.4.1/home to enter wifi settings, monitor or repeater mode and LoRa spreading factor settings.
+//  version JW-2.1.7 Moved changable parameters to a separate file
 //  version AC-2.1.6 Added repeater loop'd message detection. Thanks Aldo!
 //  version WD-2.1.5 Enabled watchdog reset to Gateway mode.
 //  version WD-2.1.4 Added Gateway ID to serial diagnostics.
@@ -30,8 +31,9 @@
 //  https://techtutorialsx.com/2017/07/26/esp32-arduino-setting-a-soft-ap/
 //***********************************************************************************************
 
+// Paramaters that are likely to change are stored in a separate file.
+// This source code file should not change between rebuilds
 #include "param.h"
-
 
 /*
   //********* MQTT Connection Setup ********
@@ -50,19 +52,13 @@
   #define MQTT_TOPIC        "AKLC"                  // topic root
 */
 
-#define MQTT_SERVER       "mqtt.innovateauckland.nz"
-#define MQTT_SERVERPORT   1883
-#define MQTT_USERNAME     "simple"
-#define MQTT_KEY          "simplePassword"              // key or password
-#define MQTT_TOPIC        "AKLC"                  // topic root
-
 
 
 // *************************************************************************************************//
 // ********************************** Do not edit below this line **********************************//
 // *************************************************************************************************//
 
-#define Version "2.1.6"
+#define Version "2.1.7"
 
 // ******************** Required Libraries **********************//
 #include "EEPROM.h"

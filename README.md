@@ -4,8 +4,8 @@ This code can be compiled on a standard Arduino GUI.
 ### Libraries
 The following libraries are required:
 - AsyncTCP (can be installed fromzip file in library folder)
-- ESPAsyncWebServer (can be installed fromzip file in library folder)
-- EEPROM (can be installed fromzip file in library folder) (N.B. This library has been depreciated and should be replaced by Preferences. Raised as [issue #2](https://github.com/aklciot/TTGO-Gateway-repeater/issues/2))
+- ESPAsyncWebServer (can be installed from zip file in library folder)
+- EEPROM (can be installed from zip file in library folder) (N.B. This library has been depreciated and should be replaced by Preferences. Raised as [issue #2](https://github.com/aklciot/TTGO-Gateway-repeater/issues/2))
 - Adafruit MQTT
 - ESP8266 and ESP32 OLED driver for SSD1306 displays
 - RH_RF95.h from RadioHead

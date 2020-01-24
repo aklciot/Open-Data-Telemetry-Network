@@ -1,4 +1,4 @@
-![alt text](https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png "Logo Title Text 1")
+<img src="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png" width="200" height="200" />
 # TTGO-Gateway-repeater
 ## Compiling and loading
 This code can be compiled on a standard Arduino GUI.

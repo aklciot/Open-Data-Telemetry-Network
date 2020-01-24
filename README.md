@@ -23,9 +23,7 @@ This should also be configurable over the web interface - see [Issue #3](https:/
 
 ## Change log
 Version WD-2.3.2 Added Iwi mode
-
-Version WD-2.3.1 Reordered library load to free some memory
-
+- Version WD-2.3.1 Reordered library load to free some memory
 Version WD-2.3.0 Printed some dots, cleared some memory
 Version WD-2.2.9 Moved serial prints to from SVRAM to PROGMEM (F())
 Version WD-2.2.8 Added MQTT publish to while loop function

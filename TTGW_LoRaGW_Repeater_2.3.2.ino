@@ -50,52 +50,12 @@
 //  https://techtutorialsx.com/2017/07/26/esp32-arduino-setting-a-soft-ap/
 //  *******************************************************************************************************
 
-/*
-// *************** Unique ID's *******************
-#define GWID "TTGW03"        // Gateway mode ID
-char* MonID = "TTMon3";      // Monitor mode ID
-char* RPID = "RP3";          // Repeater mode ID
-char* SNodeID = "TTRP3";     // Node ID used in repeater mode status message
-int RPDelay = 2500;          // Delay to avoid TX message collision. For chained repeaters, seperate delay time by 2secs minimum
-
-
-
-//********* Production MQTT Connection Setup ********
-//#define MQTT_SERVER       "incredible-bricklayer.cloudmqtt.com"
-#define MQTT_SERVER       "mqtt.innovateauckland.nz"
-#define MQTT_SERVERPORT   1883
-//#define MQTT_USERNAME     "InnovateAuckland"
-//#define MQTT_KEY          "iotiscool"           // key or password
-
-#define MQTT_USERNAME     "zjexbecg"
-#define MQTT_KEY          "GUlyVbk4p-Wj"           // key or password
-
-#define MQTT_TOPIC        "AKLC"                   // topic root
-
-*/
 
 // Paramaters that are likely to change are stored in a separate file.
 // This source code file should not change between rebuilds
 #include "param.h"
 
 
-/*
-  //********* MQTT Dev Connection Setup ********
-  #define MQTT_SERVER       "m13.cloudmqtt.com"
-  #define MQTT_SERVERPORT   17320
-  #define MQTT_USERNAME     "rcmlpohh"
-  #define MQTT_KEY          "3t20uZtJTn6Z"              // key or password
-  #define MQTT_TOPIC        "AKLC"                  // topic root
-*/
-
-/********* MQTT WD Test Connection Setup ********/
-/*
-  #define MQTT_SERVER       "m14.cloudmqtt.com"
-  #define MQTT_SERVERPORT   14844
-  #define MQTT_USERNAME     "hdxpjczm"
-  #define MQTT_KEY          "O0HdZvb3kD6m"              // key or password
-  #define MQTT_TOPIC        "AKLC"                  // topic root
-*/
 
 // *************************************************************************************************//
 // ********************************** Do not edit below this line **********************************//

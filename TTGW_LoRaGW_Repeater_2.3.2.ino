@@ -2,7 +2,7 @@
 //  ******************************************************************************************************
 //  ********************************* INNOVATE AUCKLAND, LoRa MQTT Gateway *******************************
 //  ******************************************************************************************************
-//  TTGO ESP32 LoRa Wifi MQTT gateway for hardware version 1.0, 1.6 and T-Beam. Power Utilisation: 120mAh?
+//  TTGO ESP32 LoRa Wifi MQTT gateway for hardware version 1.0, 1.6 and T-Beam. Power Utilisation: 120mAh
 //  Includes remote send LoRa test message and system reset functions via MQTT subscription
 //  To configure WiFi and switch modes hold button A during startup to enter AP setup mode.
 //  Browser connect to http://192.168.4.1/home to enter your wifi settings, or select operation modes:

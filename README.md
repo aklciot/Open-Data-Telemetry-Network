@@ -1,4 +1,4 @@
-<img src="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png" width="200" height="200" />
+<img src="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png" align="middle" height="75" />
 # TTGO-Gateway-repeater
 ## Compiling and loading
 This code can be compiled on a standard Arduino GUI.

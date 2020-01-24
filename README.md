@@ -19,6 +19,9 @@ This should be configurable by the web interface over WiFi, [Issue #1](https://g
 This should also be configurable over the web interface - see [Issue #3](https://github.com/aklciot/TTGO-Gateway-repeater/issues/3)
 
 ## Gateway Modes of operation:
+
+The gateway sends data from the sensor to the internet.  To make this work the gateway needs to know your WiFi name and password to make a connection. The gateway uses very little data, about 50MB per month, as much as listening to a few music tracks.  It also contains no personal data, has no microphone or camera and is hack resistant. This is because the gateway has a very low attack surface, it does not listen for any internet traffic (its’ all outbound only).
+
 ### Setup Mode:
  This mode allows the end user to enter the WiFi connection credentials and select the mode of operation.
 

@@ -1,6 +1,6 @@
 <img src="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png" align="middle" height="75"/>
 
-# TTGO-Gateway-repeater
+# TTGO Multi Mode LoRa Gateway-Repeater
 ## Compiling and loading
 This code can be compiled on a standard Arduino GUI.
 ### Libraries

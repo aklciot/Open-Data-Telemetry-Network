@@ -1,4 +1,4 @@
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png "Logo Title Text 1")
 # TTGO-Gateway-repeater
 ## Compiling and loading
 This code can be compiled on a standard Arduino GUI.

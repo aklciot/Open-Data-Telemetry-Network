@@ -18,10 +18,19 @@ This should be configurable by the web interface over WiFi, [Issue #1](https://g
 * MQTT setting need to be done in the `param.h1` file
 This should also be configurable over the web interface - see [Issue #3](https://github.com/aklciot/TTGO-Gateway-repeater/issues/3)
 
-## Using the gateway
-### Gateway mode
+## Gateway Modes of operation:
+### Setup Mode:
+ This mode allows the end user to enter the WiFi connection credentials and select the mode of operation.
 
-### Setup mode
+### Gateway Mode:
+ This is the main operation mode.  Gateway mode receives sensor data over LoRa and sends it over the internet to the data processing service.
+
+### Repeater Mode:
+This mode converts the gateway in to a LoRa to LoRa signal repeater that extends the range of the network and allows sensors to be put in locations where the gateway cannot otherwise make a connection.
+
+### Monitor Mode:
+The signal monitor mode primary function is during network setup. The monitor provides unique features to assist in location decisions including signal strength and auto reply functions. This mode also provides local only (iwi) mode, this is an important feature identified by Mana Whenua ensures data remains in the local area.
+
 
 ## Change log
 - Version WD-2.3.2 Added Iwi mode

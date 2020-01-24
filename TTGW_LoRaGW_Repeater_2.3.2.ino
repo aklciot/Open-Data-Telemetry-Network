@@ -759,28 +759,6 @@ String HTMLHome = String(HTMLHead + HTMLStyle_1 + HTMLStyle_2 + HTMLStyle_3 + HT
 AsyncWebServer server(80);
 void APSetup()
 {
-  //*** Variables for APSetup mode and GET Parameters ******
-  /*
-    String WiFiName;
-    String WiFiPassword;
-    String ProjectName;
-    String LatStr;
-    String LongStr;
-    String GuestWiFi;
-    // HTML Content
-    String HTMLHead = "<!DOCTYPE html><html><head>";
-    String HTMLStyle_1 = "<style>body {background-color: #131c41;width: 85%;height: 85%; color: #ffffff; font-family: Arial, Helvetica, sans-serif; padding: 7px;} div{font-weight: normal;font-size: 18px; color: #ffffff; font-family: Arial, Helvetica, sans-serif; padding: 7px;}";
-    String HTMLStyle_2 = "a:link, a:visited {font-weight: normal;font-size: 12px;color: #ffffff;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;}a:hover, a:active {background-color: #ff6f00;color: #000000;}";
-    String HTMLStyle_3 = "form{border: 2px solid #5d699e;padding: 12px 20px;}input[type=text] {width: 100%;padding: 12px 20px;margin: 8px 0;box-sizing: border-box;} p{font-weight: normal;font-size: 12px;color: #cccccc;}</style></head><body>";
-    String HTMLText_1 = "<h1>LoRa Gateway Setup</h1><h3>Enter your wifi name, WiFi password and project name.</h3><br>IMPORTANT: Your data is identified by the project name. You must use the same project name for all gateways to access your sensor data.<br>";
-    String HTMLForm_1 = "<div class='input'><form action='update' method='get' ><br>Wifi Name:<br><input type='text' name='WiFi_Name'><br>Wifi Password:<br><input type='text' name='WiFi_Password'><br>Project Name:<br><input type='text' name='Project_Name'><br><input type='checkbox' name='Guest_WiFi' value='1'>Use Guest Wifi, no password<br><input type='submit' value='Submit'></form></div>";
-    String HTMLForm_2 = "<div class='input'><form action='update' method='get' ><br>Wifi Name:<br><input type='text' name='WiFi_Name'><br>Wifi Password:<br><input type='text' name='WiFi_Password'><br>Project Name:<br><input type='text' name='Project_Name'><br>Gateway Location:<br>Lattitude:<br><input type='text' name='Lat_Str' value='-36.83'><br><br>Longitude:<br><input type='text' name='Long_Str' value='174.83'><br><input type='checkbox' name='Guest_WiFi' value='1'>Use Guest Wifi, no password<br><input type='submit' value='Submit'></form></div>";
-    String HTMLNav = "<p><a href='/monitor'>MONITOR MODE</a>|<a href='/repeater'>REPEATER MODE</a>|<a href='/SetSF'>ADVANCED</a>|<a href='/save'>EXIT SETUP</a>";
-    String HTMLFoot = "<br><br><p>Gateway Version: 2.3.0, Copyright (c) Innovate Auckland<br>W.Davies 2019</p></body></html>";
-
-    String HTMLHome = String(HTMLHead + HTMLStyle_1 + HTMLStyle_2 + HTMLStyle_3 + HTMLText_1 + HTMLForm_2 + HTMLNav + HTMLFoot);
-
-  */
 
   const char *APssid = "GWSetup_1";
   const char *APpassword = "testpassword"; //not used

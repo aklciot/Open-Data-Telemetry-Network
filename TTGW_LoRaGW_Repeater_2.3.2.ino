@@ -960,7 +960,7 @@ void Monitor() {
       i = 0;
     }
 
-    // wd this is the LoRa Radio recieve section
+    // wd this is the LoRa Radio receive section
     if (rf95.available())
     {
       memset(buf, '\0', sizeof(buf)); //reset buffer to clear pervious messages
@@ -1083,7 +1083,7 @@ void Repeater() {
       i = 0;
     }
 
-    // wd this is the LoRa Radio recieve section
+    // wd this is the LoRa Radio receive section
     // Serial.println();
     timerWrite(timer, 0); //reset timer (feed watchdog)
     delay(10);

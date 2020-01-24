@@ -49,11 +49,19 @@ This should also be configurable over the web interface - see [Issue #3](https:/
 - Version WD-2.0.6 added support for TTGO - Version 1.6
 - Version WD-2.0.5 Moved location for lat-long to SRAM
 - Version WD-2.0 added SRAM setup mode via WiFi
-- Version WD-0.8 Increased connect retries
-- Version WD-0.7 Added ESP Watchdog
-- Version WD-0.6 Added reset counter during wifi and mqtt connection
-- Version WD-0.5 Added ESP.restart(); to mqtt RESET command.
-- Version WD-0.4 Added test message button
-- Version WD-0.3 Updated serial diagnostics
+- Version WD-1.8 Removed reply message
+- Version WD-1.7 Added reset counter watchdog during wifi and mqtt connection
+- Version WD-1.4 Disabled watchdog during connection to aviod watchdog loop lockout
+- Version WD-1.3 Added power fail status
+- Version WD-1.2 Added non blocking 5 min delay for status
+- Version WD-1.1 Added location to health status message
+- Version WD-1.0 Added health status queue
+- Version WD-0.9 Updated health status message to include uptime
+- Version WD-0.8 Added gateway health message publish
+- Version WD-0.7 Added gateway location message values
+- Version WD-0.6 Added RSSI message value
+- Version WD-0.5 Added reset counter during wifi and mqtt connection
+- Version WD-0.4 Added ESP.restart(); to mqtt RESET command.
+- Version WD-0.3 Added test message button
 - Version WD-0.2 Updated serial diagnostics
 - Version WD-0.1 Initial build

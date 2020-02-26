@@ -18,6 +18,13 @@ This should be configurable by the web interface over WiFi, [Issue #1](https://g
 * MQTT setting need to be done in the `param.h1` file
 This should also be configurable over the web interface - see [Issue #3](https://github.com/aklciot/TTGO-Gateway-repeater/issues/3)
 
+## Getting the Gateway Hardware
+The gateway software runs on three variants of TTGO LoRa Wifi ESP32 device that is compatible with Arduino ESP32.
+
+
+Type three;  TTGO T-Beam
+https://www.amazon.com/TTGO-T-Beam-Wireless-Bluetooth-Battery/dp/B07WVWCMKZ
+
 ## Gateway Modes of operation:
 
 The gateway sends data from the sensor to the internet.  To make this work the gateway needs to know your WiFi name and password to make a connection. The gateway uses very little data, about 50MB per month, as much as listening to a few music tracks.  It also contains no personal data, has no microphone or camera and is hack resistant. This is because the gateway has a very low attack surface, it does not listen for any internet traffic (its’ all outbound only).
@@ -36,7 +43,7 @@ The signal monitor mode primary function is during network setup. The monitor pr
 
 
 ## Change log
-- Version WD-2.3.5 27-Feb-2020, Added MQTT reconnect to failed publish gateway loop
+- Version WD-2.3.5, 27-Feb-2020, Added MQTT reconnect to failed publish gateway loop
 - Version WD-2.3.4 Reduced RSSI value in Monitor mode
 - Version WD-2.3.3 Reduced RSSI value in Repeater mode- Version WD-2.3.2 Added Iwi mode
 - Version WD-2.3.1 Reordered library load to free some memory

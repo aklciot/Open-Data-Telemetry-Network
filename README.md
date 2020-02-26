@@ -20,8 +20,8 @@ This should also be configurable over the web interface - see [Issue #3](https:/
 
 ## Getting the Gateway Hardware
 The gateway software runs on three variants of TTGO LoRa Wifi ESP32 device that is compatible with Arduino ESP32.
-<br>NOTE:  Ensure you select the correct frequency, 915Mhz version for New Zealand use.
-Edit the gateway code to match the hardware gateway device you have.  
+<br>NOTE:  Ensure you select the correct frequency, (915Mhz version for New Zealand use) or region.
+Edit the gateway code to match the hardware gateway device you have.
 
 #### Type One; LILYGO TTGO 915MHz SX1276 ESP32 LoRa 0.96
 2Pcs LILYGO TTGO 915MHz SX1276 ESP32 LoRa 0.96 Inch Blue OLED Display bluetooth WIFI Module IOT Development Board

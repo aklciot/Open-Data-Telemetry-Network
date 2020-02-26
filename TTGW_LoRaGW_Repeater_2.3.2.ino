@@ -1,14 +1,16 @@
-
 //  ******************************************************************************************************
 //  ********************************* INNOVATE AUCKLAND, LoRa MQTT Gateway *******************************
 //  ******************************************************************************************************
-//  TTGO ESP32 LoRa Wifi MQTT gateway for hardware version 1.0, 1.6 and T-Beam. Power Utilisation: 120mAh
+//  TTGO ESP32 LoRa Wifi MQTT gateway for hardware version 1.0, 1.6 and T-Beam. Power Utilisation: 120mAh?
 //  Includes remote send LoRa test message and system reset functions via MQTT subscription
 //  To configure WiFi and switch modes hold button A during startup to enter AP setup mode.
 //  Browser connect to http://192.168.4.1/home to enter your wifi settings, or select operation modes:
 //  monitor or repeater and set LoRa spreading factor.
 //  USB Serial connect at 115200(n,8,1) to view the serial diagnostics.
 //
+//  Version WD-2.3.5 27-Feb-2020, Added MQTT reconnect to failed publish gateway loop
+//  Version WD-2.3.4 Reduced RSSI value in Monitor mode
+//  Version WD-2.3.3 Reduced RSSI value in Repeater mode
 //  Version WD-2.3.2 Added Iwi mode
 //  Version WD-2.3.1 Reordered library load to free some memory
 //  Version WD-2.3.0 Printed some dots, cleared some memory
@@ -56,19 +58,18 @@
 #include "param.h"
 
 
-
 // *************************************************************************************************//
 // ********************************** Do not edit below this line **********************************//
 // *************************************************************************************************//
 
-#define Version "2.3.2"
+#define Version "2.3.5"
 
 
 // ******************** Required Libraries **********************//
 #include <RH_RF95.h>      // LoRa radio, 100k
 #include "SSD1306.h"      // OLED Display
 #include "EEPROM.h"
-#include <AsyncTCP.h> //40k
+#include <AsyncTCP.h>     //40k
 #include "ESPAsyncWebServer.h"  // 30k
 
 #include <WiFi.h>         // esp32 Wifi driver
@@ -114,17 +115,17 @@ class FLASHvariables
 
 
 
-/****************************** Configure Hardware ***************************************/
+/****************************** Configure Hardware Version *******************************/
 // TTGO version 1.0
-
-#define RFM95_RST 14
-#define RFM95_CS  18
-#define RFM95_INT 26
-#define LED_BUILTIN 2
-#define BUTTON_A 0                // Setup AP initialise button
-#define Type "TTV1"
-SSD1306 display(0x3c, 4, 15);     // TTGO VER 1.0 // OLED Display SDA = pin 4, SCL = pin 15, RESET = pin 16
-
+/*
+  #define RFM95_RST 14
+  #define RFM95_CS  18
+  #define RFM95_INT 26
+  #define LED_BUILTIN 2
+  #define BUTTON_A 0                // Setup AP initialise button
+  #define Type "TTV1"
+  SSD1306 display(0x3c, 4, 15);     // TTGO VER 1.0 // OLED Display SDA = pin 4, SCL = pin 15, RESET = pin 16
+*/
 /*
   //TTGO Version 1.6
   #define RFM95_RST     23
@@ -135,16 +136,16 @@ SSD1306 display(0x3c, 4, 15);     // TTGO VER 1.0 // OLED Display SDA = pin 4, S
   #define Type "TTV2"
   SSD1306 display(0x3c, 21, 22);      //TTGO VER 2.1.6 and TBeam OLED Display SDA = pin 21, SCL = pin 22, RESET = pin 16
 */
-/*
-  //TTGO TBeam Version 1.0
-  #define RFM95_RST 23
-  #define RFM95_CS  18
-  #define RFM95_INT 26
-  #define LED_BUILTIN 14            //TTGO V1:2, TTGO V2:25, TBeam:14
-  #define BUTTON_A 39               //setup AP initialise button
-  #define Type "TTV3"
-  SSD1306 display(0x3c, 21, 22);    //TTGO VER 2.1.6 and TBeam OLED Display SDA = pin 21, SCL = pin 22, RESET = pin 16
-*/
+
+//TTGO TBeam Version 1.0
+#define RFM95_RST 23
+#define RFM95_CS  18
+#define RFM95_INT 26
+#define LED_BUILTIN 14            //TTGO V1:2, TTGO V2:25, TBeam:14
+#define BUTTON_A 39               //setup AP initialise button
+#define Type "TTV3"
+SSD1306 display(0x3c, 21, 22);    //TTGO VER 2.1.6 and TBeam OLED Display SDA = pin 21, SCL = pin 22, RESET = pin 16
+
 /*******************************************************************************************/
 
 
@@ -348,7 +349,7 @@ char* autoReply = "TTMon";             // Monitor Keyword for auto reply
 char* Statstr = "OK";                  // holds status string value used to indicate power fail if implemented
 char Uptime[6];                        // holds uptime string value
 char Rstr[4];                          // holds RSSI string value
-double RS;                             // create variable doubles to hold numeric values
+int RS;                                // holds RSSI value
 double Mills;                          // double for uptime value
 int period = 605000;                   // 10min delay for status message publish
 unsigned long time_now = 0;
@@ -475,7 +476,7 @@ void Gateway() {
         memset(Gbuffer, '\0', sizeof(Gbuffer)); // reset buffer to clear previous messages
         delay(10);
         RS = rf95.lastRssi();
-        dtostrf(RS, 3, 2, Rstr);
+        dtostrf(RS, 1, 0, Rstr);
         sprintf(Gbuffer, "%s,%s,%s,%s,%s,%s", GWID, buf, Rstr, myVars.Latstr, myVars.Lonstr, myVars.ProjectName);
 
         // Publish MQTT Message...
@@ -488,7 +489,12 @@ void Gateway() {
         while (! pubmessage.publish(Gbuffer)) {
           Serial.println(F("Publish failed, retry in 5secs"));
           timerWrite(timer, 0); //reset timer (feed watchdog)
+          delay(10);
+          Serial.println(F("MQTT Disconnect"));
+          mqtt.disconnect();
           delay(5000);  // wait 2 seconds
+          Serial.println(F("MQTT Reconnect"));
+          mqtt.connect();
           counter3++;
           Serial.print(F("MQTT Publish Counter: ")); Serial.println(counter3);
           if (counter3 == 5) {
@@ -538,14 +544,14 @@ void Gateway() {
     // Print out some dots...
     uint8_t dot;
     dot++;
-    Serial.print(F("."));
+    //Serial.print(F("."));
     if (dot == 80) {
-      Serial.println(F("."));
+      // Serial.println(F("."));
+      digitalWrite(LED_BUILTIN, HIGH);
+      delay(50);
       dot = 0;
     }
-    //digitalWrite(LED_BUILTIN, HIGH);
-    delay(50);
-    //digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(LED_BUILTIN, LOW);
   }
 }
 
@@ -759,6 +765,28 @@ String HTMLHome = String(HTMLHead + HTMLStyle_1 + HTMLStyle_2 + HTMLStyle_3 + HT
 AsyncWebServer server(80);
 void APSetup()
 {
+  //*** Variables for APSetup mode and GET Parameters ******
+  /*
+    String WiFiName;
+    String WiFiPassword;
+    String ProjectName;
+    String LatStr;
+    String LongStr;
+    String GuestWiFi;
+    // HTML Content
+    String HTMLHead = "<!DOCTYPE html><html><head>";
+    String HTMLStyle_1 = "<style>body {background-color: #131c41;width: 85%;height: 85%; color: #ffffff; font-family: Arial, Helvetica, sans-serif; padding: 7px;} div{font-weight: normal;font-size: 18px; color: #ffffff; font-family: Arial, Helvetica, sans-serif; padding: 7px;}";
+    String HTMLStyle_2 = "a:link, a:visited {font-weight: normal;font-size: 12px;color: #ffffff;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;}a:hover, a:active {background-color: #ff6f00;color: #000000;}";
+    String HTMLStyle_3 = "form{border: 2px solid #5d699e;padding: 12px 20px;}input[type=text] {width: 100%;padding: 12px 20px;margin: 8px 0;box-sizing: border-box;} p{font-weight: normal;font-size: 12px;color: #cccccc;}</style></head><body>";
+    String HTMLText_1 = "<h1>LoRa Gateway Setup</h1><h3>Enter your wifi name, WiFi password and project name.</h3><br>IMPORTANT: Your data is identified by the project name. You must use the same project name for all gateways to access your sensor data.<br>";
+    String HTMLForm_1 = "<div class='input'><form action='update' method='get' ><br>Wifi Name:<br><input type='text' name='WiFi_Name'><br>Wifi Password:<br><input type='text' name='WiFi_Password'><br>Project Name:<br><input type='text' name='Project_Name'><br><input type='checkbox' name='Guest_WiFi' value='1'>Use Guest Wifi, no password<br><input type='submit' value='Submit'></form></div>";
+    String HTMLForm_2 = "<div class='input'><form action='update' method='get' ><br>Wifi Name:<br><input type='text' name='WiFi_Name'><br>Wifi Password:<br><input type='text' name='WiFi_Password'><br>Project Name:<br><input type='text' name='Project_Name'><br>Gateway Location:<br>Lattitude:<br><input type='text' name='Lat_Str' value='-36.83'><br><br>Longitude:<br><input type='text' name='Long_Str' value='174.83'><br><input type='checkbox' name='Guest_WiFi' value='1'>Use Guest Wifi, no password<br><input type='submit' value='Submit'></form></div>";
+    String HTMLNav = "<p><a href='/monitor'>MONITOR MODE</a>|<a href='/repeater'>REPEATER MODE</a>|<a href='/SetSF'>ADVANCED</a>|<a href='/save'>EXIT SETUP</a>";
+    String HTMLFoot = "<br><br><p>Gateway Version: 2.3.0, Copyright (c) Innovate Auckland<br>W.Davies 2019</p></body></html>";
+
+    String HTMLHome = String(HTMLHead + HTMLStyle_1 + HTMLStyle_2 + HTMLStyle_3 + HTMLText_1 + HTMLForm_2 + HTMLNav + HTMLFoot);
+
+  */
 
   const char *APssid = "GWSetup_1";
   const char *APpassword = "testpassword"; //not used
@@ -960,7 +988,7 @@ void Monitor() {
       i = 0;
     }
 
-    // wd this is the LoRa Radio receive section
+    // wd this is the LoRa Radio recieve section
     if (rf95.available())
     {
       memset(buf, '\0', sizeof(buf)); //reset buffer to clear pervious messages
@@ -980,7 +1008,7 @@ void Monitor() {
         Serial.println(rf95.lastRssi(), DEC);
 
         RS = rf95.lastRssi();
-        dtostrf(RS, 3, 2, Rstr);
+        dtostrf(RS, 1, 0, Rstr);
         sprintf(Gbuffer, "%s,%s,%s,%s,%s,%s", GWID, buf, Rstr, myVars.Latstr, myVars.Lonstr, myVars.ProjectName);
         Serial.println(F("Local Mode Message:"));
         Serial.println(Gbuffer);
@@ -1062,28 +1090,28 @@ void Repeater() {
 
     // This section prevents OLED display burn when running for long periods
     i++;
-    if (i <= 40) {
+    if (i <= 80) {
       display.clear();
       display.drawString(0, 45, "RP Ready");
       display.display();
     }
-    if (i > 41 && i <= 80) {
+    if (i > 81 && i <= 160) {
       display.clear();
       display.drawString(40, 45, "RP Ready");
       display.display();
     }
-    if (i > 81 && i <= 120) {
+    if (i > 161 && i <= 240) {
       display.clear();
       display.drawString(80, 45, "RP Ready");
       display.display();
     }
-    if (i > 120) {
+    if (i > 240) {
       display.clear();
       display.display();
       i = 0;
     }
 
-    // wd this is the LoRa Radio receive section
+    // wd this is the LoRa Radio recieve section
     // Serial.println();
     timerWrite(timer, 0); //reset timer (feed watchdog)
     delay(10);
@@ -1113,7 +1141,7 @@ void Repeater() {
         display.display();
 
         RS = rf95.lastRssi();
-        dtostrf(RS, 1, 1, Rstr);
+        dtostrf(RS, 1, 0, Rstr);
 
         Found = strstr((char*)buf, RPID); //check for looped message
 
@@ -1126,7 +1154,7 @@ void Repeater() {
           display.drawString(0, 35, "RSSI:");
           display.drawString(50 , 35 , Rstr);
           display.display();
-          delay(1500);
+          delay(3000);
         }
         else {
           digitalWrite(LED_BUILTIN, HIGH);
@@ -1203,14 +1231,14 @@ void Repeater() {
     // Print out some dots...
     uint8_t dot;
     dot++;
-    Serial.print(F("."));
+    //Serial.print(F("."));
     if (dot == 80) {
-      Serial.println(F("."));
       dot = 0;
+      //Serial.println(F("."));
+      digitalWrite(LED_BUILTIN, HIGH);
+      delay(100);
     }
-    //digitalWrite(LED_BUILTIN, HIGH);
-    delay(50);
-    //digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(LED_BUILTIN, LOW);
   }
 }
 

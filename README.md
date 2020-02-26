@@ -22,8 +22,12 @@ This should also be configurable over the web interface - see [Issue #3](https:/
 The gateway software runs on three variants of TTGO LoRa Wifi ESP32 device that is compatible with Arduino ESP32.
 <br>NOTE:  Ensure you select the correct frequency, 915Mhz version for New Zealand use.
 
-
-### Type three;  TTGO T-Beam
+#### Type TWO;  TTGO T-Beam; TTGO LoRa32 V2.1 ESP32LILYGO® 
+TTGO LoRa32 V2.1 ESP32 433MHz/868MHz/915MHz OLED 0.96 Inch SD Card bluetooth WIFI Wireless Module SMA IP5306 - 915MHZ
+<br>
+https://www.banggood.com/LILYGO-TTGO-LoRa32-V2_1-ESP32-433MHz868MHz915MHz-OLED-0_96-Inch-SD-Card-bluetooth-WIFI-Wireless-Module-SMA-IP5306-p-1545144.html?rmmds=search&ID=510803&cur_warehouse=CN
+<br>
+#### Type three;  TTGO T-Beam
 <br>
 TTGO T-Beam ESP32 433/868/915/923Mhz WiFi Wireless Bluetooth Module ESP 32 GPS NEO-6M SMA 18650 Battery Holder with OLED (915MHZ)<br>
 https://www.amazon.com/TTGO-T-Beam-Wireless-Bluetooth-Battery/dp/B07WVWCMKZ

@@ -36,7 +36,9 @@ The signal monitor mode primary function is during network setup. The monitor pr
 
 
 ## Change log
-- Version WD-2.3.2 Added Iwi mode
+- Version WD-2.3.5 27-Feb-2020, Added MQTT reconnect to failed publish gateway loop
+- Version WD-2.3.4 Reduced RSSI value in Monitor mode
+- Version WD-2.3.3 Reduced RSSI value in Repeater mode- Version WD-2.3.2 Added Iwi mode
 - Version WD-2.3.1 Reordered library load to free some memory
 - Version WD-2.3.0 Printed some dots, cleared some memory
 - Version WD-2.2.9 Moved serial prints to from SVRAM to PROGMEM (F())

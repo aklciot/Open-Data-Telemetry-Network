@@ -80,7 +80,7 @@ SOFTWARE.
 // Paramaters that are likely to change are stored in a separate file.
 // This source code file should not change between rebuilds
 #include "param.h"
-
+int RPDelay = 2000;  // Delay to avoid TX message collision. MIN 2 SEC, MAX 6. Use a different a delay time for chained repeaters (min 2secs)
 
 // *************************************************************************************************//
 // ********************************** Do not edit below this line **********************************//

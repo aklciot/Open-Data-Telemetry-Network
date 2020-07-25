@@ -8,6 +8,8 @@
 //  monitor or repeater and set LoRa spreading factor.
 //  USB Serial connect at 115200(n,8,1) to view the serial diagnostics.
 //
+// IMPORTANT: Take care to correctly Configure Hardware Version for your board, lines 144-175.
+//
 //  Version WD-2.3.5 27-Feb-2020, Added MQTT reconnect to failed publish gateway loop
 //  Version WD-2.3.4 Reduced RSSI value in Monitor mode
 //  Version WD-2.3.3 Reduced RSSI value in Repeater mode

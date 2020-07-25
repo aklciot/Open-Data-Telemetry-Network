@@ -8,7 +8,7 @@
 // It is assumed you have installed an Arduino IDE,  included the latest radiohead library and have a compatible LoRa MCU board installed and attached.
 //
 // IMPORTANT: This is not a LoRaWAN node, it uses basic LoRa without adding the WAN overhead required for shared network systems.
-// The intention to provide the simplest possible telemetry solution.
+// The intention is to provide the simplest possible telemetry solution.
 //
 //
 // Questions or comments please contact us on our Github page, https://github.com/aklciot

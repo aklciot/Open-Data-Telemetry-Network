@@ -4,6 +4,8 @@
 ## Compiling and loading
 This code can be compiled on a standard Arduino GUI. Your IDE will need the ESP32 boards added.  See the Arduino support pages for details on how to complete this step.
 
+UPDATE:  Sample code for a simple LoRa node that works with this gateway is now included
+
 ### Libraries
 The following libraries are required:
 - AsyncTCP (can be installed fromzip file in library folder)

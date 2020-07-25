@@ -142,7 +142,7 @@ void loop() {
 
   // Measure distance, read UltraSonic
   // distance = distanceSensor.measureDistanceCm();  // HCSR04.h
-  distance = 150;  // demo distance value for testing for testing
+  distance = 150;  // demo distance value for testing
   Serial.println(distance);
   delay(100);
 

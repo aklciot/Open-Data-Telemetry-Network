@@ -10,6 +10,15 @@
 // IMPORTANT: This is not a LoRaWAN node, it uses basic LoRa without adding the WAN overhead required for shared network systems.
 // The intention is to provide the simplest possible telemetry solution.
 //
+// The Non-Profit Open Software License version 3.0 (NPOSL-3.0)
+//
+// Copyright (c) 2019 Innovate Auckland
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute copies of the Software, 
+// and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// This software may not be used for commercial purposes.
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
 //
 // Questions or comments please contact us on our Github page, https://github.com/aklciot
 // Innovate Auckland

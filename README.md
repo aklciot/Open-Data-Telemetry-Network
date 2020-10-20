@@ -1,6 +1,14 @@
 <img src="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png" align="middle" height="75"/>
 
-# TTGO Multi Mode LoRa Gateway-Repeater
+# Multi Mode LoRa Gateway-Repeater
+## Contents:
+This page decribes the Innovate Auckland Telemetry Gateway.  On this page you will find details on where to buy supported hardware, details on the gateway operation, source code and the operating manual for setup and advanced features.
+
+## Important:  This opensource software is licenced free for non-commercial use only.
+Please review and respect the licences for included libraires.
+For any commercial applications, please contact us. 
+
+
 ## Compiling and loading
 This code can be compiled on a standard Arduino GUI. Your IDE will need the ESP32 boards added.  See the Arduino support pages for details on how to complete this step.
 

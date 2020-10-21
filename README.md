@@ -4,7 +4,7 @@
 ## Contents:
 This page decribes the Innovate Auckland Telemetry Gateway.  On this page you will find details on where to buy supported hardware, details on the gateway operation, source code and the operating manual for setup and advanced features.
 
-The gateway sends data from the sensor to the internet.  To make this work the gateway needs to know your WiFi name and password to make a connection. The gateway uses very little data, about 20MB per month, as much as listening to a few music tracks.  It also contains no personal data, has no microphone or camera.  and is hack resistant. The gateway does not accept any inbound connections making it very resistant to hacking, all internet connections are outbound only.
+The gateway sends data from the sensor to the internet.  To make this work the gateway needs to know your WiFi name and password to make a connection. The gateway uses very little data, about 20MB per month, as much as listening to a few music tracks.  It also contains no personal data, and has no microphone or camera. The gateway does not accept any inbound connections making it very resistant to hacking, all internet connections are outbound only.
 Power utlisation is about 150mA, less than 1 watt (1/10th of a standard LED light bulb).
 
 ## Important:  This opensource software is free for non-commercial use only.

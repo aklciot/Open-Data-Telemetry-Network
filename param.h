@@ -1,8 +1,8 @@
 // *************** Unique ID's *******************//
 #define GWID "TTGWLB1"        // Gateway mode ID
-char* MonID = "TTMonLB1";     // Monitor mode ID must start with TTMon
-char* RPID = "RP8";           // Repeater mode ID
-char* SNodeID = "TT-RP8";     // Node ID used in repeater mode status message
+char* MonID = "TTMonLB1";     // Monitor mode ID must start with TTMon to trigger auto-reply from a receiving gateway
+char* RPID = "RP8";           // Repeater mode ID used to prevent endless message loops between repeaters
+char* SNodeID = "TT-RP8";     // Node ID used in repeater mode status message. Please see the manual for more explanations of the monitor and repater operating modes
 
 #define MQTT_SERVER       "mqtt.innovateauckland.nz"
 #define MQTT_SERVERPORT   1883

@@ -31,7 +31,7 @@ For any commercial applications, please contact us.
 ## Compiling and loading
 This code can be compiled on a standard Arduino GUI. Your IDE will need the ESP32 boards added.  See the Arduino support pages for details on how to complete this step.
 
-UPDATE:  Sample code for a simple LoRa node that works with this gateway is now included
+UPDATE:  <a href="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/NodeExampleUltraSonicSensor.ino">Sample code for a simple LoRa node</a> that works with this gateway is now included to get you started with sensors and IOT devices.
 
 ### Libraries
 The following libraries are required:

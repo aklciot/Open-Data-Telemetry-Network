@@ -9,7 +9,8 @@ Included libraries are copyright to their respective owners
    
 ## Functions and features.
 This gateway is designed to create a telemetry connection for situations where standard 2.4 Ghz WiFi and mains power is available.
-<br> 
+<br>
+<br>
 <i>If you don’t have access to mains power or a suitable Wifi connection, please <a href="mailto:aklciot@gmail.com">contact us</a> about the mobile 4G solar powered gateway version.</i>
 <br>
 <li>Receives open LoRa massages and publishes as comma delimited text to MQTT over a standard Wifi connection

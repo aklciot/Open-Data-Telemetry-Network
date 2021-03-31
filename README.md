@@ -19,7 +19,7 @@ This gateway is designed to create a telemetry connection for situations where s
 <li>Supports onsite network testing/setup with automatic gateway status replies over LoRa and MQTT triggered by a gateway message sent in monitor mode. Note this function requires a multimode gateway in monitor mode.
 
 ## Contents:
-This page describes the Innovate Auckland Telemetry Gateway. On this page you will find details on where to buy supported hardware, details on the gateway operation, source code and the operating manual for setup and advanced features.
+This page describes the Innovate Auckland Telemetry Gateway. On this page you will find details on where to buy supported hardware, details on the gateway operation, source code and the <a href="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/USER_GUIDE_MulitimodeGateway_1.0.pdf">operating manual for setup and advanced features</a>.
 
 The gateway sends data from the sensor to the internet. To make this work the gateway needs to know your WIFI name and password to make a connection. The gateway uses very little data, about 20MB per month, as much as listening to a few music tracks. It also contains no personal data and has no microphone or camera. The gateway does not accept any inbound connections making it very resistant to hacking, all internet connections are outbound only. Power utilisation is about 150mA, less than 1 watt (1/10th of a standard LED light bulb).
 

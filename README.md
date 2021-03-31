@@ -11,7 +11,7 @@ Included libraries are copyright to their respective owners
 This gateway is designed to create a telemetry connection for situations where standard 2.4 Ghz WiFi and mains power is available. 
 <br>Please contact us if you require the solar powered version or don’t have access to a suitable Wifi connection.
 <li>Receives open LoRa massages and publishes as comma delimited text to MQTT over a standard Wifi connection
-<li>Includes and embedded webserver and application for simple setup using mobile or PC
+<li>Includes an embedded webserver and application for simple setup using mobile or PC
 <li>Three main modes of operation, normal gateway mode, repeater mode to extend range and monitor for network testing and setup. 
 <li>Includes built in reset watchdog
 <li>Detects and automatically reconnects on connection failure 

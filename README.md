@@ -8,8 +8,10 @@ Copyright (c) 2019 Innovate Auckland. All rights reserved.
 Included libraries are copyright to their respective owners
    
 ## Functions and features.
-This gateway is designed to create a telemetry connection for situations where standard 2.4 Ghz WiFi and mains power is available. 
-<i>Please contact us if you require the mobile 4G solar powered version or don’t have access to power or a suitable Wifi connection.</i>
+This gateway is designed to create a telemetry connection for situations where standard 2.4 Ghz WiFi and mains power is available.
+<br> 
+<i>If you don’t have access to mains power or a suitable Wifi connection, please <a href="mailto:aklciot@gmail.com">contact us</a>about the mobile 4G solar powered gateway version.</i>
+<br>
 <li>Receives open LoRa massages and publishes as comma delimited text to MQTT over a standard Wifi connection
 <li>Includes an embedded webserver and application for simple setup using mobile or PC
 <li>Three main modes of operation, normal gateway mode, repeater mode to extend range and monitor for network testing and setup. 

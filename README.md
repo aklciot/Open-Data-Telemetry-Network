@@ -8,7 +8,7 @@ Copyright (c) 2019 Innovate Auckland. All rights reserved.
 Included libraries are copyright to their respective owners
    
 ## Functions and features.
-This gateway is designed to create a telemetry connection for situations where standard 2.4 Ghz WiFi and mains power is available.
+This gateway is designed to create a data telemetry connection for environmental IOT projects where standard 2.4 Ghz WiFi and mains power is available nearby.
 <br>
 <br>
 <i>NOTE: If you don’t have access to mains power or a suitable Wifi connection, please <a href="mailto:aklciot@gmail.com">contact us</a> about the mobile 4G solar powered gateway version.</i>

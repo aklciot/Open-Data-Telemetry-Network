@@ -15,7 +15,7 @@ This gateway is designed to create a data telemetry connection for environmental
 <br>
 <li>Receives open LoRa massages and publishes as comma delimited text to MQTT over a standard Wifi connection
 <li>Includes an embedded webserver and application for simple setup using mobile or PC
-<li>Three main modes of operation, normal gateway mode, repeater mode to extend range and monitor for network testing and setup. 
+<li>Three main modes of operation, normal gateway mode, repeater mode to extend range and monitor mode for network testing and setup. 
 <li>Includes built in reset watchdog
 <li>Detects and automatically reconnects on connection failure 
 <li>Regularly sends the gateway status including name, type, version, uptime, battery level over MQTT using the keyword GWSTATUS.

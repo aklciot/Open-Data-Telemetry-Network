@@ -1,6 +1,23 @@
 <img src="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/InnovateAuckland_Medium.png" align="middle" height="75"/>
 
 # Multi Mode LoRa Gateway-Repeater
+## Arduino ESP32 based LoRa to Wifi MQTT Gateway
+
+INNOVATE AUCKLAND
+Copyright (c) 2019 Innovate Auckland. All rights reserved.
+Included libraries are copyright to their respective owners
+   
+## Functions and features.
+This gateway is designed to create a telemetry connection for situations where standard 2.4 Ghz WiFi and mains power is available. 
+<br>Please contact us if you require the solar powered version or don’t have access to a suitable Wifi connection.
+<li>Receives open LoRa massages and publishes as comma delimited text to MQTT over a standard Wifi connection
+<li>Includes and embedded webserver and application for simple setup using mobile or PC
+<li>Three main modes of operation, normal gateway mode, repeater mode to extend range and monitor for network testing and setup. 
+<li>Includes built in reset watchdog
+<li>Detects and automatically reconnects on connection failure 
+<li>Regularly sends the gateway status including name, type, version, uptime, battery level over MQTT using the keyword GWSTATUS.
+<li>Supports onsite network testing/setup with automatic gateway status replies over LoRa and MQTT triggered by a gateway message sent in monitor mode. Note this function requires a multimode gateway in monitor mode.
+
 ## Contents:
 This page describes the Innovate Auckland Telemetry Gateway. On this page you will find details on where to buy supported hardware, details on the gateway operation, source code and the operating manual for setup and advanced features.
 

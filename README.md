@@ -21,7 +21,7 @@ This gateway is designed to create a data telemetry connection for environmental
 <li>Supports onsite network testing/setup with automatic gateway status replies over LoRa and MQTT triggered by a gateway message sent in monitor mode. Note this function requires a multimode gateway in monitor mode.
 <br>  
 <br>
-<i>NOTE: If your project location does not have access to mains power or a suitable Wifi connection nearby, please <a href="mailto:aklciot@gmail.com">contact us</a> about the mobile 4G solar powered gateway.</i>
+<i>NOTE: If your project location does not have access to mains power or a suitable Wifi connection nearby, please <a href="mailto:aklciot@gmail.com">contact us</a> about how to get our mobile 4G solar powered gateway.</i>
    
 
 ## Contents:

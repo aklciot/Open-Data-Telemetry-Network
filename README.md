@@ -10,8 +10,7 @@ Included libraries are copyright to their respective owners
 ## Functions and features.
 This gateway is designed to create a data telemetry connection for environmental IOT projects where standard 2.4 Ghz WiFi and mains power is available nearby.
 <br>
-<br>
-<i>NOTE: If your project location does not have access to mains power or a suitable Wifi connection nearby, please <a href="mailto:aklciot@gmail.com">contact us</a> about the mobile 4G solar powered gateway.</i>
+
 <br>
 <li>Receives open LoRa massages and publishes as comma delimited text to MQTT over a standard Wifi connection
 <li>Includes an embedded webserver and application for simple setup using mobile or PC
@@ -20,6 +19,10 @@ This gateway is designed to create a data telemetry connection for environmental
 <li>Detects and automatically reconnects on connection failure 
 <li>Regularly sends the gateway status including name, type, version, uptime, battery level over MQTT using the keyword GWSTATUS.
 <li>Supports onsite network testing/setup with automatic gateway status replies over LoRa and MQTT triggered by a gateway message sent in monitor mode. Note this function requires a multimode gateway in monitor mode.
+   
+<br>
+<i>NOTE: If your project location does not have access to mains power or a suitable Wifi connection nearby, please <a href="mailto:aklciot@gmail.com">contact us</a> about the mobile 4G solar powered gateway.</i>
+   
 
 ## Contents:
 This page describes the Innovate Auckland Telemetry Gateway. On this page you will find details on where to buy supported hardware, details on the gateway operation, source code and the <a href="https://github.com/aklciot/TTGO-Gateway-repeater/blob/master/USER_GUIDE_MulitimodeGateway_1.0.pdf">operating manual for setup and advanced features</a>.
